@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Azeret Mono', monospace;
+}
+
+/* Estilo geral */
+body {
+    background-color: #141415;
+    color: #fafafa;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(186, 14, 14);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: rgb(186, 14, 14);
+}
+
+.buttons button {
+    border: 2px solid rgb(186, 14, 14);
+    background-color: transparent;
+    color: rgb(186, 14, 14);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.buttons button:hover {
+    background-color: rgb(186, 14, 14);
+    color: #141415;
+}
+
+.cadastro {
+    margin-left: 10px;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 50px 40px;
+    background-color: #202020;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #fafafa;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: rgb(186, 14, 14);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: rgb(186, 14, 14);
+    color: #fafafa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-content button:hover {
+    background-color: #a61010;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Features Section */
+#features {
+    padding: 60px 20px;
+    background-color: #141415;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #202020;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: rgb(186, 14, 14);
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* About Section */
+#about {
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #1e1e1f;
+}
+
+.about-content {
+    max-width: 50%;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Call to Action Section */
+#get-started {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #141415;
+}
+
+#get-started h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#get-started p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#get-started button {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    background-color: rgb(186, 14, 14);
+    color: #fafafa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#get-started button:hover {
+    background-color: #a61010;
+}
+.aboutContet{
+width: 500px;
+margin-left: auto;
+margin-right: 100px;
+}
+
+#parargafo{
+     font-size: 1.3rem;
+    color: rgb(186, 14, 14);
+    margin-bottom: 10px;
+}

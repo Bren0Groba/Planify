@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cadastro">
+    <form class="form">
+      <h1 class="title">Bem-vindo(a) ao Planify</h1>
+      <p class="subtitle">Crie sua conta aqui:</p>
+
+      <!-- Inputs -->
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Username*" required>
+        <input type="email" id="email" placeholder="Email*" required>
+        <input type="password" id="password" placeholder="Senha*" required>
+        <input type="password" id="confirm-password" placeholder="Confirmar Senha*" required>
+      </div>
+
+      <!-- Ver Senha -->
+      <button type="button" onclick="olhos()" id="verSenha" >Ver senha <img id="eyeIcon" src="../Assets/imagens/olhoFechado.png" alt="Olho fechado"></button>
+
+
+      <!-- Botão Criar -->
+      <button type="submit" class="btnSubmit">Criar</button>
+
+      <!-- Link para Login -->
+      <p class="login-link">
+        Já possui uma conta? <a href="../Login/login.html">Ir para o <strong>Login</strong></a>
+      </p>
+    </form>
+  </div>
+  <!-- Notificação inferior -->
+<div id="bottom-notification" class="bottom-notification hidden">
+  <span id="bottom-notification-message"></span>
+  <button id="close-bottom-notification">X</button>
+</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

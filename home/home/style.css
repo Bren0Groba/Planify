@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;700&display=swap');
+
+/* Estilos do Quill */
+.ql-font-sans-serif {
+    font-family: sans-serif;
+}
+.ql-font-arial {
+    font-family: Arial, sans-serif;
+}
+.ql-font-verdana {
+    font-family: Verdana, sans-serif;
+}
+.ql-font-georgia {
+    font-family: Georgia, serif;
+}
+
+/* Ajuste os nomes exibidos no menu */
+.ql-picker.ql-font .ql-picker-label[data-value="arial"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="arial"]::before {
+    content: "Arial";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="verdana"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="verdana"]::before {
+    content: "Verdana";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="georgia"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="georgia"]::before {
+    content: "Georgia";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="sans-serif"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="sans-serif"]::before {
+    content: "Sans Serif";
+}
+
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Azeret Mono', monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    background-color: #141415;
+    color: white;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background-color: #141415;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #555;
+    border-width: 0 1px 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+   
+}
+
+#container{
+    top: 50%;
+}
+.mensagem-container {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center; 
+   margin-left: 550px;
+    text-align: center; 
+    margin-top: 252px;     
+             
+  }
+
+.mensagem-container img {
+    width: 300px;    /* Ajuste o tamanho da imagem conforme necessário */
+    height: 300px;   /* Ajuste o tamanho da imagem conforme necessário */
+    margin-bottom: 20px; /* Espaço entre a imagem e o texto */
+  }
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #141415;
+    color: #f24747;
+    border: none;
+    padding: 11px;
+    margin: 15px 0 21px 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sidebarBotoes {
+    background-color: #141415;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+#addProject{
+
+ background-color: rgb(186, 14, 14);
+ color: #fafafa;
+ border: none;
+
+
+}
+.sidebarBotoes:hover {
+    background-color: #666;
+}
+
+#btnSair {
+    background-color: rgb(186, 14, 14);
+}
+
+#btnSair:hover {
+    background-color: #c9302c;
+}
+
+.botoesdebaixo {
+    margin-top: auto;
+}
+
+/* Barra de Pesquisa */
+#searchContainer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+#cima {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #141415;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #fafafa;
+   
+    margin-left: 240px; /* Ajusta após a sidebar fixa */
+    width:calc(100% - 230px);
+    
+}
+#modalDocumento h2, h3{
+    margin-bottom: 10px;
+margin-top: 5px;
+}
+#searchInput {
+    width: 600px;
+    padding: 10px 10px;
+    border: none;
+    
+    border-radius: 4px 0px 0px 4px;
+    background-color: #333;
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+#searchInput::placeholder {
+    color: #aaa;
+}
+
+#searchButton {
+    padding: 9.5px 15px;
+    background-color: rgb(186, 14, 14);
+    color: white;
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #d9534f;
+}
+
+
+/* Separadores e Ícones */
+#divider {
+    /* width: 100%; */
+    width: calc(100vw - 20px);
+    border: none;
+    border-top: 1px solid transparent;
+    margin: 10px auto;
+}
+
+#iconContainer img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#topIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+}
+
+#topIcon:hover {
+    transform: scale(1.1);
+}
+
+/* Menus */
+/* .filtragem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 8px 15px; */
+    /* background-color: rgb(186, 14, 14);
+    border-radius: 4px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+} */ 
+
+.filter-button {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 150px;
+}
+
+
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.btnFiltragem:hover, .btnSubFiltragem:hover {
+    background-color: #666;
+}
+
+
+
+/* Modais */
+#modalzinho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#modalListaContent {
+    position: relative;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    width: 500px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1f1f1f;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Permite rolagem vertical caso o conteúdo seja maior */
+}
+#modalContentDocumento, #modalContentDocumentoEditar{
+    position: relative;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    width: 1000px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1f1f1f;
+    /* height: 1000px; */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Permite rolagem vertical caso o conteúdo seja maior */
+
+}
+#modal-content {
+    position: relative;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    width: 500px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1f1f1f;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-AdicionarProjeto h2 {
+    color: rgb(186, 14, 14);
+    margin-right: 15px;
+}
+
+#btnfechar {
+    background-color: transparent;
+    color: #fafafa;
+    border: none;
+    padding: 10px 12px;
+    margin-left: auto;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+#btnfechar:hover {
+    background-color: rgb(186, 14, 14);
+}
+
+#typeproject {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#typeproject select {
+    width: 250px;
+    background-color: transparent;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fafafa;
+    border: 1px solid #999;
+}
+
+.btnmodal, #confirmar-exclusao, #cancelar-exclusao {
+    color: #fafafa;
+    background-color: rgb(186, 14, 14);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.botoesModal {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estados visíveis/ocultos */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: visibility 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: visibility 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+}
+
+/* Estilos principais do modal da lista */
+/* Modal geral */
+.modalzinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content, #modal-confirmacao {
+    background: #1e1e1e;
+    color: #fff;
+    border-radius: 10px;
+    width: 40%;
+    max-height: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+#modal-content {
+    position: relative;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    width: 500px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1f1f1f;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+#modalHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#modalHeaderLista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnFecharX {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btnFecharX:hover {
+    color: #ff4d4d;
+}
+
+/* Input de Tarefas */
+.task-input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#nomeProjeto, #descricaoInput, #descricaoInputEditar {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+.add-task-btn {
+    background-color: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.add-task-btn:hover {
+    background-color: #e63939;
+}
+
+/* Lista de Tarefas */
+#tarefasLista , #tarefasListaEditar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 300px;
+    
+    margin-bottom: 5px;
+}   
+#tarefasListaEditar{
+    display: block;
+    unicode-bidi: isolate;
+}
+
+#tarefasLista li, #tarefasListaEditar li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2b2b2b;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+.task-checkbox, #tarefasListaEditar input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.task-item span #tarefasListaEditar span{
+    flex: 1;
+    color: #ddd;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+#modalLista h4, #modalListaEditar h4{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 5px;
+    
+}
+
+
+.delete-btn:hover {
+    color: #e63939;
+}
+
+.delete-btn:hover {
+    color: #e63939;
+}
+#typeProjectLista{
+    border: none;
+}
+/* Botões do modal */
+.botoesModalLista {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.btnModalLista {
+    flex: 1;
+    background-color: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.btnModalLista:hover {
+    background-color: #e63939;
+}
+
+.opcoes{
+    background-color: #141415;
+    
+}
+#mySelect{
+    margin-bottom: 15px;
+}
+#main-content {
+
+    margin-left: 250px; /* Para alinhar após a sidebar */
+    padding-left: 20px;
+    background-color: transparent;
+    height: 100%; /* Altura dinâmica */
+    overflow-y: auto;
+    color: white;
+    
+    display:flex;
+    flex-wrap: wrap; /* Permite que os botões se ajustem nas linhas */
+    gap: 0px 10px; /* Ajuste o espaçamento vertical para 30px e horizontal para 10px */
+}
+
+.projeto-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px; /* Ajusta o padding para reduzir o tamanho */
+    height: 50px; /* Altura dos botões */
+    width: calc(25% - 10px); /* Para 4 botões por linha, com o gap ajustado */
+    margin: 0; /* Remover margens extras */
+    border-radius: 4px;
+    border: 1px solid rgb(186, 14, 14);
+    background-color: #2b2b2b;
+    color: #fafafa;
+}
+
+.projeto-btn i {
+    margin-left: 10px; /* Espaço entre o nome do projeto e o ícone */
+}
+
+.mensagem{
+    top: 50%;
+}
+.bottom-notification {
+    position: fixed;
+    bottom: 20px; /* Espaçamento da parte inferior da tela */
+    right: 20px; /* Espaçamento da lateral direita */
+    background-color: #4CAF50; /* Cor verde para sucesso */
+    color: white;
+    padding: 15px 30px; /* Ajuste do preenchimento interno */
+    border-radius: 8px;
+    width: 450px; /* Largura da notificação */
+    font-size: 18px; /* Tamanho da fonte ajustado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    opacity: 0; /* Inicia invisível */
+    transform: translateY(100%); /* Inicia fora da tela */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transições suaves */
+}
+
+/* Animação para aparecer a notificação */
+.bottom-notification.show {
+    opacity: 1; /* Visível */
+    transform: translateY(0); /* Dentro da tela */
+}
+
+/* Esconde a notificação quando tiver a classe 'hidden' */
+.bottom-notification.hidden {
+    display: none;
+}
+
+/* Estilos do botão de fechar */
+#close-bottom-notification {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}

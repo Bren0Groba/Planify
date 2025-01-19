@@ -1,0 +1,199 @@
+/* Estilização Geral */
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Azeret Mono', monospace;
+ font-weight: bold;
+  background-color: #1f1f1f;
+  color: #333;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.cadastro {
+  position: absolute; /* Mudei de fixed para absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+  border-radius: 15px;
+  width: 370px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Garante que o conteúdo interno esteja empilhado */
+}
+
+/* Formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Título */
+.title {
+  color: rgb(186, 14, 14);
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Subtítulo */
+.subtitle {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 14px;
+ 
+}
+
+/* Grupo de Inputs */
+.input-group input {
+  font-family: 'Azeret Mono', monospace;
+  width: 330px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+
+/* Botão "Ver senha" */
+/* Botão "Ver senha" */
+#verSenha {
+  font-family: 'Azeret Mono', monospace;
+  background-color: #ccc;
+  border-radius: 15px;
+  border: none;
+  display: flex; /* Habilita o alinhamento flexível */
+  align-items: center; /* Centraliza o texto e a imagem verticalmente */
+  justify-content: center; /* Centraliza horizontalmente, se necessário */
+  gap: 8px; /* Espaço entre a imagem e o texto */
+  padding: 10px; /* Ajusta o tamanho do botão */
+  cursor: pointer;
+}
+
+/* Imagem no botão */
+#verSenha img {
+  width: 24px; /* Define um tamanho fixo para a imagem */
+  height: 24px; /* Proporcional ao width */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .cadastro {
+    width: 90%; /* Torna o formulário mais adaptável em telas menores */
+  }}
+
+
+.eye-icon {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+/* Botão Criar */
+.btnSubmit {
+  font-family: 'Azeret Mono', monospace;
+  background-color: rgb(186, 14, 14);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btnSubmit:hover {
+  background-color: rgb(231, 78, 78);
+}
+
+/* Link de Login */
+.login-link {
+  margin-top: 20px;
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Notificação inferior */
+.bottom-notification {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+  background-color: #4CAF50; /* Cor verde para sucesso */
+  color: white;
+  padding: 15px 30px;  /* Aumentei o padding para dar mais destaque */
+  border-radius: 8px;
+  width: 450px;  /* Aumentei a largura para tornar a notificação mais visível */
+  font-size: 24px;  /* Aumentei o tamanho da fonte */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-out;
+  opacity: 0;  /* Inicia invisível */
+  transform: translateY(100%);  /* Inicia abaixo da tela */
+  animation: slideUp 0.5s forwards;  /* Animação para aparecer */
+}
+
+/* Animação para fazer a notificação deslizar para cima */
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Esconde a notificação quando tiver a classe 'hidden' */
+.bottom-notification.hidden {
+  display: none;
+}
+
+/* Estilos do botão de fechar */
+#close-bottom-notification {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+

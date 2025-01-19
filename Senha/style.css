@@ -1,0 +1,331 @@
+/* Estilização Geral */
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Azeret Mono', monospace;
+  font-weight: bold;
+  background-color: #1f1f1f;
+  color: #333;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#codigo-verificacao {
+  display: none; /* Inicialmente escondido */
+}
+
+#codigo-verificacao input {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Formulário de Cadastro */
+.cadastro {
+  position: fixed; /* Usando fixed para garantir que o formulário sempre fique no centro */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o conteúdo */
+  border-radius: 15px;
+  width: 370px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Título */
+.title {
+  color: rgb(186, 14, 14);
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Subtítulo */
+.subtitle {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Grupo de Inputs */
+.input-group input {
+  font-family: 'Azeret Mono', monospace;
+  width: 330px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+/* Botão "Verificar" */
+.btnVerificar {
+  font-family: 'Azeret Mono', monospace;
+  background-color: rgb(186, 14, 14);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btnVerificar:hover {
+  background-color: rgb(231, 78, 78);
+}
+
+/* Estilo do Modal */
+.modal {
+  display: none; /* Inicialmente o modal está escondido */
+  position: fixed; /* Fixa o modal na tela */
+ 
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 22, 22, 0.6); /* Fundo escurecido */
+  z-index: 1000; /* Garantir que o modal fique acima de outros elementos */
+  display: flex;
+  justify-content: center; /* Alinha o conteúdo horizontalmente */
+  align-items: center; /* Alinha o conteúdo verticalmente */
+}
+.texto{
+  color: rgb(186, 14, 14);
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+  background-color: #141415;
+  color: #f24747; /* Cor de fundo do conteúdo do modal */
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px; /* Largura do modal */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+/* Título do Modal */
+.modal-content h2 {
+  color: #f24747; /* Cor do título */
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Mensagem do Modal */
+.modal-content p {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Campo de entrada de código */
+ input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+#verSenha {
+  font-family: 'Azeret Mono', monospace;
+  background-color: #ccc;
+  border-radius: 15px;
+  border: none;
+  display: flex; /* Habilita o alinhamento flexível */
+  align-items: center; /* Centraliza o texto e a imagem verticalmente */
+  justify-content: center; /* Centraliza horizontalmente, se necessário */
+  gap: 8px; /* Espaço entre a imagem e o texto */
+  padding: 10px; /* Ajusta o tamanho do botão */
+  margin-bottom: 10px;
+  margin-left: 50%;
+  transform: translate(-50%,0%);
+  cursor: pointer;
+}
+
+/* Imagem no botão */
+#verSenha img {
+  width: 24px; /* Define um tamanho fixo para a imagem */
+  height: 24px; /* Proporcional ao width */
+}
+
+
+/* Botão "Verificar Código" */
+.btnVerificar{
+  font-family: 'Azeret Mono', monospace;
+  background-color: rgb(186, 14, 14);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#mensagem{
+  color: rgb(186, 14, 14);
+}
+.btnVerificarCod{
+  font-family: 'Azeret Mono', monospace;
+  background-color: rgb(186, 14, 14);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btnCodigoVerificar:hover {
+  background-color: rgb(231, 78, 78);
+}
+
+/* Botão "Reenviar Código" */
+.btnReenviarCodigo {
+  font-family: 'Azeret Mono', monospace;
+  background-color: rgb(186, 14, 14);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btnReenviarCodigo:hover {
+  background-color: rgb(231, 78, 78);
+}
+
+/* Botão Fechar Modal */
+#btnFecharModal {
+  font-family: 'Azeret Mono', monospace;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#btnFecharModal:hover {
+  background-color: #ddd;
+}
+
+/* Botão para fechar o modal (X) */
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+#modalNovaSenha{
+  
+  justify-content: center;
+}
+.bottom-notification {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+  background-color: #4CAF50; /* Cor verde para sucesso */
+  color: white;
+  padding: 15px 30px;  /* Aumentei o padding para dar mais destaque */
+  border-radius: 8px;
+  width: 450px;  /* Aumentei a largura para tornar a notificação mais visível */
+  font-size: 24px;  /* Aumentei o tamanho da fonte */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-out;
+  opacity: 0;  /* Inicia invisível */
+  transform: translateY(100%);  /* Inicia abaixo da tela */
+  animation: slideUp 0.5s forwards;  /* Animação para aparecer */
+}
+
+/* Animação para fazer a notificação deslizar para cima */
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Esconde a notificação quando tiver a classe 'hidden' */
+.bottom-notification.hidden {
+  display: none;
+}
+
+/* Estilos do botão de fechar */
+#close-bottom-notification {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+

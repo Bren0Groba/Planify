@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="cadastro">
+    <form class="form">
+      <h1 class="title">Bem-vindo(a) de volta!</h1>
+      <p class="subtitle">Recupere sua conta no Planify:</p>
+      <p class="texto" id="textinho">Insira seu e-mail!</p>
+      
+      <!-- Inputs -->
+      <div class="input-group">
+        <input class="inputsDeTexto" type="email" id="email" name="email" placeholder="Email*" required>
+      </div>
+
+      <!-- Botão Verificar -->
+      <button type="submit" class="btnVerificar">Verificar</button>
+
+    </form>
+  </div>
+
+  <!-- Modal de Código de Verificação -->
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="close-btn" class="close-btn">&times;</span>
+      <h2>Código Enviado!</h2>
+      <p>Um código foi enviado para o e-mail digitado. Verifique sua caixa de entrada.</p>
+      <p id="mensagem" class="mensagem"></p>
+      <input type="text" id="code" name="code" placeholder="Código de Verificação" required>
+      <button type="button" id="btnVerificarCod" class="btnVerificarCod">Verificar Código</button>
+
+
+      <button type="button" id="btnReenviarCodigo" class="btnReenviarCodigo">Reenviar Código</button>
+      
+    </div>
+  </div>
+
+  <!-- Modal para Nova Senha -->
+  <div id="modalNovaSenha" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="close-btn-nova-senha" class="close-btn">&times;</span>
+      <h2>Recupere seu acesso!</h2>
+      <p>Crie uma nova senha para o Planify.</p>
+      <p id="emailPraver"></p>
+      <input type="password" id="pass" name="pass" placeholder="Nova Senha" required>
+      <input type="password" id="passConfirm" name="passConfirm" placeholder="Confirme a nova senha" required>
+      <button type="button" id="verSenha" >Ver senha <img id="eyeIcon" src="../Assets/imagens/olhoFechado.png" alt="Olho fechado"></button>
+
+      <button type="button" id="btnAtualizarSenha" class="btnVerificarCod">Atualizar senha</button>
+    </div>
+  </div>
+  <div id="bottom-notification" class="bottom-notification hidden">
+    <span id="bottom-notification-message"></span>
+    <button id="close-bottom-notification">X</button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
